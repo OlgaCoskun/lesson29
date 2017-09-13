@@ -8,6 +8,10 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barbers.db"
 
 class Client < ActiveRecord::Base
+    validates :name, presence: true
+    validates :phone, presence: true
+    validates :datestamp, presence: true
+    validates :color, presence: true
 end
 
 #настройка ActiveRecord для нашей сущности
